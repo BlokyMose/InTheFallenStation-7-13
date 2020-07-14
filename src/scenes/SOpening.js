@@ -1,12 +1,12 @@
-import { CST } from "../CST";
-import { SWareHouse } from "./SWareHouse";
+import { CST } from "../CST.js";
+import { SWareHouse } from "./SWareHouse.js";
 
 let tsNarration = {
     fontSize: '25px',
     fontFamily: 'Centaur',
     color: '#ffffff',
     align: 'center',
-    
+
     // backgroundColor: '#ff00ff',
     // shadow: {color: '#000000',fill: true,offsetX: 2,offsetY: 2,blur: 8}
 };
@@ -38,9 +38,9 @@ export class SOpening extends Phaser.Scene{
     }
 
     preload(){
-        // this.load.image('smoke','../dist/assets/img/vfx/white.png');  
-        this.load.image('smoke','assets/img/vfx/smoke.png');  
-        
+        // this.load.image('smoke','../dist/assets/img/vfx/white.png');
+        this.load.image('smoke','assets/img/vfx/smoke.png');
+
         // this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
     }
 
@@ -65,7 +65,7 @@ export class SOpening extends Phaser.Scene{
                 repeat:0,
                 alpha: {
                     from:0, to:1
-                }, 
+                },
                 },
                 //2nd tween
                 {

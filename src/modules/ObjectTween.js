@@ -1,8 +1,8 @@
-import { Math } from "phaser";
+import { Math } from "../lib/phaser.js";
 
 export default class ObjectTween{
     constructor(
-        scene, 
+        scene,
         keyImg,
         x,
         y,
@@ -48,7 +48,7 @@ export default class ObjectTween{
         }
     }
 
-    SimpleTween(        
+    SimpleTween(
         repeat=-1,
         yoyo=false,
         duration=5000,
@@ -82,7 +82,7 @@ export default class ObjectTween{
         if(modeName=="randomX"){
             this.RandomSpawnX();
         } else{
-            
+
         }
     }
 

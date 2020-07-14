@@ -1,4 +1,4 @@
-import { CST } from "../CST";
+import { CST } from "../CST.js";
 
 export class STestGround extends Phaser.Scene{
     constructor() {

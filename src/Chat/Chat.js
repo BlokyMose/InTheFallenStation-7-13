@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class Chat{
     constructor(scene){
@@ -24,13 +24,13 @@ export default class Chat{
                         if(speech["end"]<this.timeNow){
                             sceneEvents.emit("display-say",false,speech["name"]); //must be in order
                             speech["isEnd"]=true;
-                            
-                            //call after a say has ended 
+
+                            //call after a say has ended
                             switch (speech["onEnd"]) {
                                 case "none": //default; continue dialogue
                                     break;
                                 case "close":   //end dialogue, reset time
-                                    this.isActive=false; 
+                                    this.isActive=false;
                                     this.timeNow=0;
                                     break;
                                 case "session":
@@ -59,7 +59,7 @@ export default class Chat{
 
                         }
                     }
-                } 
+                }
             });
 
             this.timeNow++;

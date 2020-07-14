@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class DisplayChatNPC{
     constructor({
@@ -19,9 +19,9 @@ export default class DisplayChatNPC{
             fontFamily: 'Courier',
             color: 'White',
             align: 'center',
-            lineSpacing: 5,    
+            lineSpacing: 5,
             backgroundColor: color,
-        
+
         },
         this.textStyleRight={
             align:"right",
@@ -29,9 +29,9 @@ export default class DisplayChatNPC{
             fontFamily: 'Courier',
             color: 'White',
             align: 'center',
-            lineSpacing: 5,    
+            lineSpacing: 5,
             backgroundColor: color,
-        
+
         },
         this.textStyleMiddle={
             align:"center",
@@ -39,9 +39,9 @@ export default class DisplayChatNPC{
             fontFamily: 'Courier',
             color: 'White',
             align: 'center',
-            lineSpacing: 5,    
+            lineSpacing: 5,
             backgroundColor: color,
-        
+
         },
 
         this.textBox = this.scene.add.text(this.x,this.y+this.offsetY,"",this.textStyleMiddle).setDepth(50).setOrigin(0.5,0);

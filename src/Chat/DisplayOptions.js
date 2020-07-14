@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class DisplayOptions{
     constructor(scene){
@@ -7,9 +7,9 @@ export default class DisplayOptions{
             fontSize: '17px',
             fontFamily: 'Calibri',
             color: 'White',
-            lineSpacing: 4,    
+            lineSpacing: 4,
             align: "left",
-        
+
         };
         this.opSessions = [];
         this.isNewSession = false;
@@ -28,9 +28,9 @@ export default class DisplayOptions{
             this.opTexts.push(this.scene.add.text(coor[0],coor[1],"",this.textStyle)
             .setOrigin(0,0.5).setInteractive().setActive(false))
         })
-    
+
         this.opTexts.forEach((text,index)=>{
-            text.on('pointerdown', function (pointer) { this.RecordClear(index); }, this); 
+            text.on('pointerdown', function (pointer) { this.RecordClear(index); }, this);
             text.on('pointerover', function (pointer) { this.ChangeAlpha(text); }, this);
             text.on('pointerout', function (pointer) { this.ResetAlpha(text); }, this);
         });

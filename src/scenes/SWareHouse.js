@@ -1,10 +1,10 @@
-import { CST } from "../CST";
-import UIPlay from "../UI/UIPlay";
-import { sceneEvents } from "../events/EventsCenter";
-import Player from "../player/Player";
-import MarkerTile from "../modules/MarkerTile";
-import UINotes from "../UI/UINotes";
-import Tandok from "../NPC/Tandok";
+import { CST } from "../CST.js";
+import UIPlay from "../UI/UIPlay.js";
+import { sceneEvents } from "../events/EventsCenter.js";
+import Player from "../player/Player.js";
+import MarkerTile from "../modules/MarkerTile.js";
+import UINotes from "../UI/UINotes.js";
+import Tandok from "../NPC/Tandok.js";
 
 let playerClass;
 let player;
@@ -47,7 +47,7 @@ export class SWareHouse extends Phaser.Scene{
         this.load.spritesheet('Tandok','assets/img/characters/Tandok.png', {frameWidth:18, frameHeight:36});
 
     }
-    
+
     create(){
         let UIConfig={
             iHealthPlayer:101,
@@ -55,11 +55,11 @@ export class SWareHouse extends Phaser.Scene{
             iHealthLot:100,
             iTorchBattery:0,
         };
-        this.scene.run(CST.SCENES.UIPlay2,UIConfig);        
+        this.scene.run(CST.SCENES.UIPlay2,UIConfig);
         this.input.setDefaultCursor('url(assets/cur/dotDark.cur), pointer');
-        
+
         const startPointX = 0; //-210; can be altered accordingly, better not to
-        const startPointY = 0; //-510; 
+        const startPointY = 0; //-510;
         const startPointXPlayer =1100;
         const startPointYPlayer=830;
 
@@ -85,7 +85,7 @@ export class SWareHouse extends Phaser.Scene{
                 // sceneEvents.emit('send-new-message',object.type,"system");
                 sceneEvents.emit('display-notes',true,"System",object.type);
             });
-            
+
             objectAsGO.on('pointerout', function(pointer){
                 this.clearTint();
                 sceneEvents.emit('ui-text-desc-reset');
@@ -112,7 +112,7 @@ export class SWareHouse extends Phaser.Scene{
                     break;
             }
         });
-        
+
         tilemap.setCollisionByExclusion(-1,true);
         this.matter.world.convertTilemapLayer(LPlatform); //add bodies to all tile
         // LPlatform.setCollisionByProperty({collides:true});
@@ -126,7 +126,7 @@ export class SWareHouse extends Phaser.Scene{
 
         marker = new MarkerTile(this,tilemap);
     sceneEvents.emit('trigger-gun',true);
-        
+
         }
 
     update(){
@@ -139,7 +139,7 @@ export class SWareHouse extends Phaser.Scene{
         //For some reason, a 10 or so seconds are needed to successfully emit trigger-gun
         if(_triggerCount>90){
             TriggerGun(true);
-        } 
+        }
         if(_triggerCount>-400){
             _triggerCount--;
 
@@ -149,7 +149,7 @@ export class SWareHouse extends Phaser.Scene{
 
             // console.log(_triggerCount);
         }
-        
+
     }
 }
 
@@ -168,7 +168,7 @@ function CameraMovement(speed){
     }
 
     //camera position relative to player x =0
-    console.log("Camera: x= "+(cameraMain.scrollX+400)+"; y= "+(cameraMain.scrollY-36)); 
+    console.log("Camera: x= "+(cameraMain.scrollX+400)+"; y= "+(cameraMain.scrollY-36));
 }
 
 function TestMethod(){

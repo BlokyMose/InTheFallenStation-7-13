@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class DisplayChat{
     constructor({
@@ -7,7 +7,7 @@ export default class DisplayChat{
         x,
         y,
         color = "rgba(0,0,0,0.4)",
-        
+
     }){
         this.scene = scene;
         this.name = name; //must match the emission of display-say
@@ -18,9 +18,9 @@ export default class DisplayChat{
             fontFamily: 'Calibri',
             color: 'White',
             align: 'center',
-            lineSpacing: 5,    
+            lineSpacing: 5,
             backgroundColor: color,
-        
+
         },
         this.textBox = this.scene.add.text(x+this.offsetX,y+this.offsetY,"",this.textStyle).setDepth(50).setOrigin(0.5,0);
 

@@ -1,4 +1,4 @@
-import { CST } from "../CST";
+import { CST } from "../CST.js";
 
 export default class CanvasDialogue extends Phaser.Scene{
     constructor(){

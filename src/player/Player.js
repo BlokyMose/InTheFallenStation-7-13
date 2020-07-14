@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 
 export default class Player{
@@ -12,7 +12,7 @@ export default class Player{
         speedJump = 2.1,
         speedJumpShift = 2.4,
         }){
-        
+
         //#region Vars
         this.scene = scene;
         this._speedRun = speedRun;
@@ -32,7 +32,7 @@ export default class Player{
         this.isPushWound=false;
         this.isFacingRight = true;
         //#endregion
-        
+
         this.sprite = scene.matter.add.sprite(x,y,'Eva',undefined,{
             label: "player",
             mass: 10,
@@ -122,7 +122,7 @@ export default class Player{
                 this.sprite.setTint(0xff0000);
                 this.handLeft.fillColor=0xff0000;
                 this.handRight.fillColor=0xff0000;
-                
+
             }.bind(this),
             onComplete: function(){
                 this.sprite.clearTint();
@@ -209,7 +209,7 @@ export default class Player{
             if(this.animHandIdleCounter>=0){
                 this.animHandIdleCounter++;
                 this.handRight.y = this.sprite.y-this._handOffsetYRight+1;
-                this.handLeft.y = this.sprite.y-this._handOffsetYLeft+1;    
+                this.handLeft.y = this.sprite.y-this._handOffsetYLeft+1;
                 if(this.animHandIdleCounter>=20){
                     this.animHandIdleCounter=-1;
                 }
@@ -259,7 +259,7 @@ export default class Player{
         else{
             //Actually there's no urgent need for extra var for Right and Left now
             this._handOffsetXRight = this.handOffsetX-1.5;
-            this._handOffsetXLeft = this.handOffsetX-3.2;    
+            this._handOffsetXLeft = this.handOffsetX-3.2;
             this._handOffsetYRight = this.handOffsetY-0.7;
             this._handOffsetYLeft = this.handOffsetY-0.7;
 
@@ -287,7 +287,7 @@ function PlayerMovement(){
     }
     else if(moveInput['d'].isDown){
         player.setVelocityX(1);
-        player.anims.play('runRight',true); 
+        player.anims.play('runRight',true);
         playerFacingRight=true;
     }
     else if(playerFacingRight==true){

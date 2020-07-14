@@ -1,24 +1,24 @@
-import { CST } from "../CST";
-import { sceneEvents } from "../events/EventsCenter";
-import Player from "../player/Player";
-import MarkerTile from "../modules/MarkerTile";
-import UINotes from "../UI/UINotes";
-import Tandok from "../NPC/Tandok";
-import ObjectTween from "../modules/ObjectTween";
-import { Vector } from "matter";
-import UITorch from "../UI/UITorch";
-import UIWound from "../UI/UIWound";
-import UIPhone from "../UI/UIPhone";
-import UIGun from "../UI/UIGun";
-import UIInventory from "../UI/UIInventory";
-import DTest from "../Chat/Dialogues/DTest";
+import { CST } from "../CST.js";
+import { sceneEvents } from "../events/EventsCenter.js";
+import Player from "../player/Player.js";
+import MarkerTile from "../modules/MarkerTile.js";
+import UINotes from "../UI/UINotes.js";
+import Tandok from "../NPC/Tandok.js";
+import ObjectTween from "../modules/ObjectTween.js";
+import { Vector } from "matter.js";
+import UITorch from "../UI/UITorch.js";
+import UIWound from "../UI/UIWound.js";
+import UIPhone from "../UI/UIPhone.js";
+import UIGun from "../UI/UIGun.js";
+import UIInventory from "../UI/UIInventory.js";
+import DTest from "../Chat/Dialogues/DTest.js";
 
 let tsTextTorch = {
     fontSize: '20px',
     fontFamily: 'Courier',
     color: 'LimeGreen',
     align: 'left',
-    lineSpacing: 5,    
+    lineSpacing: 5,
     // backgroundColor: "#a0a0a0",
     // shadow: {color: '#000000',fill: true,offsetX: 2,offsetY: 2,blur: 8}
 };
@@ -52,7 +52,7 @@ export class SPentapolis extends Phaser.Scene{
 
     init(){
         console.log("SPENTA");
-        
+
     }
 
     preload(){
@@ -138,7 +138,7 @@ export class SPentapolis extends Phaser.Scene{
         //#endregion
         //#region Basic vars
         const startPointX = 0; //-210; can be altered accordingly, better not to
-        const startPointY = 0; //-510; 
+        const startPointY = 0; //-510;
         const startPointXPlayer =210;
         const startPointYPlayer=790;
         cameraMain = this.cameras.main;
@@ -237,7 +237,7 @@ export class SPentapolis extends Phaser.Scene{
                         this.timerFire.paused = true;
                     })
                     .setOrigin(0.5,0.55).anims.play('animFire',true);
-                }             
+                }
         });
 
 
@@ -255,7 +255,7 @@ export class SPentapolis extends Phaser.Scene{
         _objectTween = new ObjectTween(this,"objSmoke", 800,1200,1000,-0,-1,false,15000,undefined,"randomX",200);
         _objectTween2 = new ObjectTween(this,"objSmoke", 600,1800,1000,-0,-1,false,15000,undefined,"randomX",200);
         _objectTween2.SetFlipXY();
-        
+
     }
 
     update(){
@@ -341,12 +341,8 @@ export class SPentapolis extends Phaser.Scene{
         }
 
         //camera position relative to player x =0
-        console.log("Camera: x= "+(cameraMain.scrollX+400)+"; y= "+(cameraMain.scrollY-36)); 
+        console.log("Camera: x= "+(cameraMain.scrollX+400)+"; y= "+(cameraMain.scrollY-36));
 
     }
 
 }
-
-
-
-
