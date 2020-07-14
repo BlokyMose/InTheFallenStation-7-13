@@ -1,13 +1,13 @@
 /** @type {import("../typings/phaser")} */
 
-import { SOpening } from "../scenes/SOpening";
-import { STestGround } from "../scenes/STestGround";
-import { SWareHouse } from "../scenes/SWareHouse";
-import { SPentapolis } from "../scenes/SPentapolis";
-import UIPlay from "../UI/UIPlay";
-import UIPlay2 from "../UI/UIPlay2";
-import { STestGround2 } from "../scenes/STestGround2";
-import CanvasDialogue from "../Chat/CanvasDialogue";
+import { SOpening } from "./scenes/SOpening.js";
+import { STestGround } from "./scenes/STestGround.js";
+import { SWareHouse } from "./scenes/SWareHouse.js";
+import { SPentapolis } from "./scenes/SPentapolis.js";
+import UIPlay from "./UI/UIPlay.js";
+import UIPlay2 from "./UI/UIPlay2.js";
+import { STestGround2 } from "./scenes/STestGround2.js";
+import CanvasDialogue from "./Chat/CanvasDialogue.js";
 
 var config = {
     type: Phaser.AUTO,
