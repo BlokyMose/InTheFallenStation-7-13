@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class UIGun{
     constructor(scene,text,x,y,textStyle){
@@ -21,9 +21,9 @@ export default class UIGun{
     AddToUI({
         itemID=this.itemID,
         name=this.name,
-        x=0, 
-        y=0, 
-        text=this.text, 
+        x=0,
+        y=0,
+        text=this.text,
         textStyle={}
     }) {
             this.itemID = itemID;
@@ -84,7 +84,7 @@ export default class UIGun{
             } else{
                 document.querySelector("#indexNotes-h1").textContent = "";
                 document.querySelector("#indexNotes-p").textContent = "";
-        
+
                 document.querySelector("#indexNotes-h1").setAttribute("style","opacity:0; color:'gainsboro';font-style: normal; ");
                 document.querySelector("#indexNotes-p").setAttribute("style","opacity:0;color:'gainsboro';font-style: normal; ");
                 }

@@ -1,10 +1,10 @@
-import { CST } from "../CST";
-import { sceneEvents } from "../events/EventsCenter";
-import UITorch from "./UITorch";
-import UIWound from "./UIWound";
-import UIPhone from "./UIPhone";
-import UINotes from "./UINotes";
-import UIGun from "./UIGun";
+import { CST } from "../CST.js";
+import { sceneEvents } from "../events/EventsCenter.js";
+import UITorch from "./UITorch.js";
+import UIWound from "./UIWound.js";
+import UIPhone from "./UIPhone.js";
+import UINotes from "./UINotes.js";
+import UIGun from "./UIGun.js";
 
 let UITextBox;
 let UITextDesc;
@@ -23,7 +23,7 @@ let tsTextDesc = {
     fontSize: '20px',
     fontFamily: 'Candara',
     color: '#f8f8ff',
-    lineSpacing: 4,    
+    lineSpacing: 4,
 
     // backgroundColor: '#ff00ff',
     // shadow: {color: '#000000',fill: true,offsetX: 2,offsetY: 2,blur: 8}
@@ -33,7 +33,7 @@ let tsTextTorch = {
     fontFamily: 'Courier',
     color: 'LimeGreen',
     align: 'left',
-    lineSpacing: 5,    
+    lineSpacing: 5,
     // backgroundColor: "#a0a0a0",
     // shadow: {color: '#000000',fill: true,offsetX: 2,offsetY: 2,blur: 8}
 };
@@ -57,7 +57,7 @@ export default class UIPlay extends Phaser.Scene{
         healthCynthia=iHealthCynthia;
         healthLot=iHealthLot;
         _torchBattery=iTorchBattery;
-        console.log("UaaaIPLAY");   
+        console.log("UaaaIPLAY");
     }
 
     preload(){
@@ -67,7 +67,7 @@ export default class UIPlay extends Phaser.Scene{
         this.load.image("UIDarknessInner","assets/img/UI/darknessInner.png");
     }
 
-    create(){       
+    create(){
         console.log("create");
 
         this.input.setDefaultCursor('url(assets/cur/dotDark.cur), pointer');
@@ -172,5 +172,3 @@ function ChangeUIHealth(){
     }
 
 }
-
-

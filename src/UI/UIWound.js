@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 
 export default class UIWound{
@@ -25,13 +25,13 @@ export default class UIWound{
             this.UIText.setColor("LimeGreen");
             this.UIText.setText("| "+"Pushed");
             this.notBleedingVar = true;
-            sceneEvents.emit("push-wound",true);            
+            sceneEvents.emit("push-wound",true);
         }
         else{
             this.UIText.setColor("Red");
             this.UIText.setText("| "+"Bleeding");
             this.notBleedingVar = false;
-            sceneEvents.emit("push-wound",false);            
+            sceneEvents.emit("push-wound",false);
         }
     }
 

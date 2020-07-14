@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class UICard{
     constructor(scene){
@@ -25,8 +25,8 @@ export default class UICard{
     AddToUI({
         itemID=0,
         name=this.name,
-        x=0, 
-        y=0, 
+        x=0,
+        y=0,
         text=this.text,
         textStyle={},
         extra={
@@ -37,12 +37,12 @@ export default class UICard{
             this.itemID = itemID;
             this.text = text;
             this.isExist = true;
-            
+
             this.UIText = this.scene.add.text(x, y, "| " + this.text, textStyle).setOrigin(0).setInteractive();
             this.UIText.setColor("LimeGreen");
             this.UIText.on('pointerover', function (pointer) { this.OpenNote(true); }, this);
             this.UIText.on('pointerout', function (pointer) { this.OpenNote(false); }, this);
-            
+
             this.title = name;
             this.desc = extra["desc"];
             sceneEvents.on('destroy-item-ui',this.Destroy,this);
@@ -54,7 +54,7 @@ export default class UICard{
             document.querySelector("#indexNotes-p").textContent = this.desc;
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:1;");
             document.querySelector("#indexNotes-p").setAttribute("style","opacity:1;");
-            
+
             this.UIText.setColor("Green");
         }else{
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:0;");

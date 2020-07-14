@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class UINotes{
     constructor(scene){
@@ -24,14 +24,14 @@ export default class UINotes{
                     document.querySelector("#indexNotes-p").textContent = notes;
                     document.querySelector("#indexNotes-h1").setAttribute("style","opacity:1;");
                     document.querySelector("#indexNotes-p").setAttribute("style","opacity:1;");
-    
+
             }
             }else{
                 document.querySelector("#indexNotes-h1").textContent = "";
                 document.querySelector("#indexNotes-p").textContent = "";
                 document.querySelector("#indexNotes-h1").setAttribute("style","opacity:0; color:'gainsboro';font-style: normal; ");
                 document.querySelector("#indexNotes-p").setAttribute("style","opacity:0;color:'gainsboro';font-style: normal; ");
-    
+
             }
 
     }

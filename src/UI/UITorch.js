@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class UITorch{
     constructor(scene, keyImgInner,keyImgOuter){
@@ -28,14 +28,14 @@ export default class UITorch{
         itemID=this.itemID,
         name=this.name,
         x=0,
-        y=0, 
-        text=this.text, 
+        y=0,
+        text=this.text,
         textStyle={}
     }) {
             this.itemID = itemID;
             this._textTorch = text;
             this.torchBattery=100;
-    
+
             this.UITextTorch = this.scene.add.text(x, y, "| " + text + ": ■■■", textStyle).setOrigin(0).setInteractive(); //■ □
             if (this.torchBattery < 76.66) {
                 this.UITextTorch.setText("| " + this._textTorch + ": ■■□");
@@ -54,9 +54,9 @@ export default class UITorch{
                 this.ActivateTorch(false);
                 sceneEvents.emit('ui-text-desc-reset'); //for UI desc
             }, this);
-    
+
             sceneEvents.on("destroy-item-ui",this.Destroy,this);
-    
+
     }
 
     ActivateTorch(boolValue){
@@ -119,4 +119,3 @@ export default class UITorch{
     }
 
 }
-

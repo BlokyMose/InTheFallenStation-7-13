@@ -1,16 +1,16 @@
-import { CST } from "../CST";
-import { sceneEvents } from "../events/EventsCenter";
-import UITorch from "./UITorch";
-import UIWound from "./UIWound";
-import UIPhone from "./UIPhone";
-import UINotes from "./UINotes";
-import UIGun from "./UIGun";
-import UIInventory from "./UIInventory";
-import UICard from "./UICard";
-import DisplayChat from "../Chat/DisplayChat";
-import Chat from "../Chat/Chat";
-import DisplayOptions from "../Chat/DisplayOptions";
-import DisplayChatNPC from "../Chat/DisplayChatNPC";
+import { CST } from "../CST.js";
+import { sceneEvents } from "../events/EventsCenter.js";
+import UITorch from "./UITorch.js";
+import UIWound from "./UIWound.js";
+import UIPhone from "./UIPhone.js";
+import UINotes from "./UINotes.js";
+import UIGun from "./UIGun.js";
+import UIInventory from "./UIInventory.js";
+import UICard from "./UICard.js";
+import DisplayChat from "../Chat/DisplayChat.js";
+import Chat from "../Chat/Chat.js";
+import DisplayOptions from "../Chat/DisplayOptions.js";
+import DisplayChatNPC from "../Chat/DisplayChatNPC.js";
 
 let UITextBox;
 let UITextDesc;
@@ -31,7 +31,7 @@ let tsTextDesc = {
     fontSize: '20px',
     fontFamily: 'Candara',
     color: 'darkgray',
-    lineSpacing: 4,    
+    lineSpacing: 4,
     align: "right",
     // backgroundColor: '#ff00ff',
     // shadow: {color: '#000000',fill: true,offsetX: 2,offsetY: 2,blur: 8}
@@ -41,7 +41,7 @@ let tsTextTorch = {
     fontFamily: 'Courier',
     color: 'LimeGreen',
     align: 'left',
-    lineSpacing: 5,    
+    lineSpacing: 5,
     // backgroundColor: "#a0a0a0",
     // shadow: {color: '#000000',fill: true,offsetX: 2,offsetY: 2,blur: 8}
 };
@@ -71,7 +71,7 @@ export default class UIPlay2 extends Phaser.Scene{
         this.dialogueActiveInit = dialogueActive;
         this.npcDisplay = npcDisplay;
         this.displayChatNPC=[];
-        console.log("UIPLAY2");   
+        console.log("UIPLAY2");
     }
 
     preload(){
@@ -79,7 +79,7 @@ export default class UIPlay2 extends Phaser.Scene{
         this.load.image("UIDarknessInner","assets/img/UI/darknessInner.png");
     }
 
-    create(){       
+    create(){
         this.allTools = [];
         this.input.setDefaultCursor('url(assets/cur/dotDark.cur), pointer');
 
@@ -102,12 +102,12 @@ export default class UIPlay2 extends Phaser.Scene{
     //_______________________________________________
     //
         //Default for all tools and items
-        //Add new tools by making Class+AddToUI(), add InsertToInventory() switch, add InsertTOOLToInventory(), 
+        //Add new tools by making Class+AddToUI(), add InsertToInventory() switch, add InsertTOOLToInventory(),
         //Insert tools by emit an insert-item + ref:itemID to call InsertToInventory here
         //ex:  sceneEvents.emit('insert-item',{itemID:101,name:"Torch"});
 
         //Flow: emit-> InsertToInventory-> switch-> InsertTOOL-> push allTools for new Class
-        //      -> InsertItem by UIInventory-> get x,y for UIText-> add UIText by UITOOL 
+        //      -> InsertItem by UIInventory-> get x,y for UIText-> add UIText by UITOOL
     //
     //_______________________________________________
         this.AddInventory();
@@ -136,7 +136,7 @@ export default class UIPlay2 extends Phaser.Scene{
         this.chat = new Chat(this); //Chat engine
         this.InsertDialogueToChat(this.dialogueScene,this.dialogueSessionInit,this.dialogueActiveInit);
     //#endregion
-    
+
         sceneEvents.on('timer-event',DecreaseHealth);
         sceneEvents.on('insert-item',this.InsertToInventory,this);
     }
@@ -158,7 +158,7 @@ export default class UIPlay2 extends Phaser.Scene{
                             {
                                 title:"FireCard",
                                 desc:"Firedesc"
-                            }) 
+                            })
                         break;
                     case "Phoenix":
                         this.InsertCardToInventory(itemID,
@@ -256,7 +256,7 @@ export default class UIPlay2 extends Phaser.Scene{
             loop: true,
             callback: DecreaseHealth,
         });
-    
+
     }
 
     InsertDialogueToChat(dialogues,session=0,isActive = true){
@@ -334,5 +334,3 @@ function UpdateUIHealth(){
 
 }
 //#endregion
-
-

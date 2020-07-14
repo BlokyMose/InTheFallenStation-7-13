@@ -1,4 +1,4 @@
-import { sceneEvents } from "../events/EventsCenter";
+import { sceneEvents } from "../events/EventsCenter.js";
 
 export default class UIPhone{
     constructor(scene){
@@ -26,8 +26,8 @@ export default class UIPhone{
     AddToUI({
         itemID=this.itemID,
         name=this.name,
-        x=0, 
-        y=0, 
+        x=0,
+        y=0,
         text=this.text,
         textStyle={}
     }){
@@ -36,12 +36,12 @@ export default class UIPhone{
             this.isExist = true;
             this.allMessages = [];
             this.allMessages[0] = "> no log";
-    
+
             this.UIText = this.scene.add.text(x, y, "| " + this.text, textStyle).setOrigin(0).setInteractive();
             this.UIText.setColor("LimeGreen");
             this.UIText.on('pointerover', function (pointer) { this.OpenPhone(true); }, this);
             this.UIText.on('pointerout', function (pointer) { this.OpenPhone(false); }, this);
-    
+
             sceneEvents.on('send-new-message', this.NewMessage ,this);
             sceneEvents.on('destroy-item-ui',this.Destroy,this);
     }
@@ -52,7 +52,7 @@ export default class UIPhone{
             document.querySelector("#indexNotes-p").textContent = this.allMessages.join(";");
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:1;");
             document.querySelector("#indexNotes-p").setAttribute("style","opacity:1;");
-            
+
             this.UIText.setColor("Green");
         }else{
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:0;");

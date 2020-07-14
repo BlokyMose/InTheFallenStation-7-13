@@ -1,11 +1,11 @@
-import MyColor from "../list/MyColor";
-import { sceneEvents } from "../events/EventsCenter";
+import MyColor from "../list/MyColor.js";
+import { sceneEvents } from "../events/EventsCenter.js";
 let tsTextTorch = {
     fontSize: '20px',
     fontFamily: 'Courier',
     color: 'LimeGreen',
     align: 'left',
-    lineSpacing: 5,    
+    lineSpacing: 5,
     // backgroundColor: "#a0a0a0",
     // shadow: {color: '#000000',fill: true,offsetX: 2,offsetY: 2,blur: 8}
 };
@@ -41,7 +41,7 @@ export default class UIInventory{
             fontFamily: 'Calibri',
             color: "DarkSlateGray",
             align: 'left',
-            lineSpacing: 5,    
+            lineSpacing: 5,
         },
         //#endregion
         //#region Temp vars
@@ -51,7 +51,7 @@ export default class UIInventory{
                 //#endregion
 
         this.AddUIText(x, y, textStyle);
-        //#region Access arrays  
+        //#region Access arrays
         //Init: big rect BG + each array will only have max items according to itemMax = 6
         this.UIInventoryAccessBG = this.scene.add.rectangle(400,245,290,440,this.myColor.military.number,0.8).setVisible(false).setDepth(20);
         for (let n = 0; n < this.bagMax; n++) {
@@ -111,7 +111,7 @@ export default class UIInventory{
                     console.log("_ID:"+_itemID+"ID "+this.allItems[index][4]+"; item "+this.allItems[index][0]);
                     this.UITextInventory.setColor("Chartreuse"); //Chartreuse //GreenYellow
                     this.UITextInventory.setText("| "+this._textInventory+": "+this.bagNow);
-    
+
                     return {x:this.UICoordinates[index][0],
                             y:this.UICoordinates[index][1],
                         };
@@ -119,7 +119,7 @@ export default class UIInventory{
                 }
                 index++;
             }
-            
+
                 //Signal for new item has been added
     }
     EmptyItem(tween,target,index){
@@ -161,7 +161,7 @@ export default class UIInventory{
                 onCompleteParams: [index],
                 onCompleteScope:this
             });
-    
+
         }else{
             //Stop deleting, item box returns to original state
             this.timerTweenDelete.remove();
@@ -175,7 +175,7 @@ export default class UIInventory{
             document.querySelector("#indexNotes-p").textContent = this.allItems[index][3];
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:1;");
             document.querySelector("#indexNotes-p").setAttribute("style","opacity:1;");
-    
+
             this.allItemsBox[index][0].setAlpha(0.5);
 
             //Prevent X from showing in Empty slot
@@ -188,7 +188,7 @@ export default class UIInventory{
             document.querySelector("#indexNotes-p").textContent = "";
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:0;");
             document.querySelector("#indexNotes-p").setAttribute("style","opacity:0;");
-    
+
             this.allItemsBox[index][0].setAlpha(1);
             this.allItemsBox[index][1].setVisible(false);
 
@@ -196,7 +196,7 @@ export default class UIInventory{
     }
     itemBoxColorChange(type, arrayIndex) {
 
-        // for additional type, my color still has orangeJuice , extraLime, redOrgan 
+        // for additional type, my color still has orangeJuice , extraLime, redOrgan
 
         if (type == "tool") {
             this.allItemsBox[arrayIndex][0].fillColor = this.myColor.springGreen.number;
@@ -258,7 +258,7 @@ export default class UIInventory{
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:1;");
             document.querySelector("#indexNotes-p").setAttribute("style","opacity:1;");
             this.UITextInventory.setColor("Green");
-        }else{  
+        }else{
             //Reset side note after hovering out
             document.querySelector("#indexNotes-h1").setAttribute("style","opacity:0;");
             document.querySelector("#indexNotes-p").setAttribute("style","opacity:0;");
