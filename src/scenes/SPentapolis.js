@@ -5,7 +5,7 @@ import MarkerTile from "../modules/MarkerTile.js";
 import UINotes from "../UI/UINotes.js";
 import Tandok from "../NPC/Tandok.js";
 import ObjectTween from "../modules/ObjectTween.js";
-import { Vector } from "matter";
+import { Vector } from "matter.d.ts";
 import UITorch from "../UI/UITorch.js";
 import UIWound from "../UI/UIWound.js";
 import UIPhone from "../UI/UIPhone.js";
