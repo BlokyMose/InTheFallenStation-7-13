@@ -1,20 +1,20 @@
 /** @type {import("../typings/phaser")} */
 
-import { SOpening } from "./scenes/SOpening";
-import { STestGround } from "./scenes/STestGround";
-import { SWareHouse } from "./scenes/SWareHouse";
-import { SPentapolis } from "./scenes/SPentapolis";
-import UIPlay from "./UI/UIPlay";
-import UIPlay2 from "./UI/UIPlay2";
-import { STestGround2 } from "./scenes/STestGround2";
-import CanvasDialogue from "./Chat/CanvasDialogue";
+import { SOpening } from "../scenes/SOpening";
+import { STestGround } from "../scenes/STestGround";
+import { SWareHouse } from "../scenes/SWareHouse";
+import { SPentapolis } from "../scenes/SPentapolis";
+import UIPlay from "../UI/UIPlay";
+import UIPlay2 from "../UI/UIPlay2";
+import { STestGround2 } from "../scenes/STestGround2";
+import CanvasDialogue from "../Chat/CanvasDialogue";
 
 var config = {
     type: Phaser.AUTO,
     width:800,
     height:600,
     pixelArt: true,
-    scale:{ 
+    scale:{
         parent:'myGame',
         // autoCenter:Phaser.Scale.CENTER_BOTH
     },
@@ -35,7 +35,7 @@ var config = {
         SWareHouse,
         UIPlay,
         STestGround,
-        SOpening, 
+        SOpening,
 
     ]
 };
@@ -53,4 +53,3 @@ let game = new Phaser.Game(config);
 // sheet.insertRule(styles, 0);
 // styles = '@font-face { font-family: "Futura"; src: url("dist\assets\fonts\IMPACT.TTF") format("opentype"); }';
 // sheet.insertRule(styles,0);
-
