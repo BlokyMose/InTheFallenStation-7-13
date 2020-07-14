@@ -1,4 +1,4 @@
-/** @type {import("../typings/phaser")} */
+/** @type {import("../typings/phaser.d.ts")} */
 
 import { SOpening } from "./scenes/SOpening.js";
 import { STestGround } from "./scenes/STestGround.js";
